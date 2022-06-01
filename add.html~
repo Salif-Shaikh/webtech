@@ -1,0 +1,14 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="add.php" method="get">
+            Enter Number 1: <input type="text" name="n1"><br>
+            Enter Number 2: <input type="text" name="n2"><br>
+            <input type="reset" value="clear">
+            <input type="submit" value="Add">
+
+        </form>
+    </body>
+</html>

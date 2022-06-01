@@ -1,0 +1,10 @@
+<!--Write a PHP script to accept Employee details (Eno, Ename, Address) on first page. On second page
+accept earning (Basic, DA, HRA). On third page print Employee information (Eno, Ename, Address,
+Basic, DA, HRA, Total) [ Use Session] -->
+<form action=E1BQ2P2.php>
+Eno:<input type=text name=eno><br>
+Ename:<input type=text name=eno><br>
+Address:<input type=text name=eno><br>
+
+
+</form>

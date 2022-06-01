@@ -1,0 +1,42 @@
+<!--
+Write a script to create XML file named “Item.xml”
+<Item>
+<ItemName> ................ </ItemName>
+<ItemPrice> ...................</ItemPrice>
+<Quantity> ..................... </Quantity>
+</Item>
+Store the details of 5 Items of different Types
+-->
+<items>
+<Item>
+<ItemName>abc</ItemName>
+<ItemPrice>500</ItemPrice>
+<Quantity>5</Quantity>
+</Item>
+
+<Item>
+<ItemName>pqr</ItemName>
+<ItemPrice>600</ItemPrice>
+<Quantity>7</Quantity>
+</Item>
+
+<Item>
+<ItemName>xyz</ItemName>
+<ItemPrice>1500</ItemPrice>
+<Quantity>50</Quantity>
+</Item>
+
+<Item>
+<ItemName>xzz</ItemName>
+</Item>
+
+<Item>
+<ItemName>pqz</ItemName>
+<ItemPrice>150</ItemPrice>
+<Quantity>5</Quantity>
+<total>750</total>
+
+</Item>
+
+</items>
+

@@ -1,0 +1,149 @@
+Linear Regression
+
+Step 1:
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score,mean_squared_error
+%matplotlib inline
+
+Step 2:
+df= pd.DataFrame(np.random.randint(0,1000,size=(500,5)),columns=['ID','TV','Radio','Newspaper','Sales'])
+df
+
+step 3:
+df.sample(5)
+
+step 4:
+new = df[['Sales','TV']]
+new
+
+step 5:
+x = np.array(new[['Sales']])
+y=np.array(new[['TV']])
+print(x.shape)
+print(y.shape)
+
+Step 6:
+plt.scatter(x,y,color="red")
+plt.title('Sales vs TV')
+plt.xlabel('Sales')
+plt.ylabel('TV')
+plt.show()
+
+Step 7:
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3,random_state=15)
+regressor = LinearRegression()
+regressor.fit(x_train,y_train)
+print(x_train)
+
+
+Step 8:
+plt.scatter(x_test,y_test,color="green")
+plt.plot(x_train,regressor.predict(x_train),color="red",linewidth=3)
+plt.title('Regression(Test Set)')
+plt.xlabel('Sales')
+plt.ylabel('TV')
+
+step 9:
+plt.scatter(x_train,y_train,color="blue")
+plt.plot(x_train,regressor.predict(x_train),color="red",linewidth=3)
+plt.title('Regression(training Set)')
+plt.xlabel('Sales')
+plt.ylabel('TV')
+
+
+Logistic Regresssion:
+Step 1:
+!pip install seaborn
+
+Step 2:s
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import r2_score,mean_squared_error
+%matplotlib inline
+import seaborn as sn
+from sklearn import metrics
+
+step 3:
+df=pd.read_excel("C:\TYBSC\user.xlsx")
+df
+
+Step 4:
+x = df.iloc[:,[2,3]].values
+y = df.iloc[:,4].values
+
+step 5:
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
+logistic_regression = LogisticRegression()
+logistic_regression = regression.fit(x_train,y_train)
+y_pred = logistic_regression.predict(x_test)
+
+step 6:
+confusion_matrix = pd.crosstab(y_test,y_pred,row_names=['Actual'],colnames=['predict'])
+sn.heatmap(confusion_matrix,annot=True)
+print('Accuracy: ',metrics.accuracy_score(y_test,y_pred))
+plt.show()
+
+step 7:
+print (x_test)
+print (y_pred)
+Aprori algorithm
+
+Step 1:
+pip install mlxtend
+
+step 2:
+import pandas as pd
+from mlxtend.frequent_patterns import apriori,association_rules
+
+step 3:
+from mlxtend.preprocessing import TransactionEncoder
+te=TransactionEncoder()
+te_array=te.fit(transactions).transform(transactions)
+df=pd.DataFrame(te_array,columns=te.columns_)
+df
+
+step 4:
+freq_items=apriori(df,min_support=0.6,use_colnames=True)
+print(freq_items)
+
+step 5:
+rules=association_rules(freq_items,metric='support',min_threshold=0.05)
+rules=rules.sort_values(['support','confidence'],ascending=[False,False])
+print(rules)
+
+
+if url is given
+step 1:
+import pandas as pd
+from mlxtend.frequent_patterns import apriori,association_rules
+step 2:
+df=pd.read_csv("https://raw.githubusercontent.com/shivang98/Market-Basket-Optimization/master/Market_Basket_Optimisation.csv",header=None)
+df
+
+step 3:
+df.isnull().sum()
+
+step 4:
+transactions = []
+for i in range(0,len(df)):
+        transactions.append([str(df.values[i,j])for j in range (0,len(df.columns))])
+transactions
+
+step 5:
+from mlxtend.preprocessing import TransactionEncoder
+te=TransactionEncoder()
+te_array=te.fit(transactions).transform(transactions)
+df=pd.DataFrame(te_array,columns=te.columns_)
+df
+
+step 6:
+freq_items = apriori(df,min_support = 0.6,use_colnames = True)
+print(freq_items)
+

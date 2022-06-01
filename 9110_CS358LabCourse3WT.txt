@@ -1,0 +1,1195 @@
+AKI’s
+
+Poona College of Arts, Science & Commerce
+
+Camp Pune-1
+
+Department of Computer Science
+
+Computer Journal
+
+Completion of experimental work
+
+CERTIFICATE
+
+This is to certify that
+
+Name: Arif Ansarali Shaikh
+
+Roll No.: 9110 Seat No:
+
+ 
+
+Subject: CS358 Lab Course Web Technologies
+Class: T.Y.B.SC. (COMPUTERSCIENCE) SEMESTER-VI
+
+Division: B
+
+For the Academic year 2021-22.
+
+The same has been examined by the Lecture in-charge and head of the computer Science department.
+
+Lecture in Charge: ------------------
+
+Lecture in Charge: ------------------
+Internal Examiner: --------------------- Head
+
+External Examiner: --------------------- Department of Computer Science
+
+ASSIGNMENT-1
+
+SET-A
+
+Q1.Write a PHP script to keep track of number of times the web page has
+been access. [Use session and cookies]
+Soln:-
+
+<?php
+
+// check ifthe cookie exists
+if(isset($_COOKIE["cnt"]})
+
+{
+
+$cnt=$_COOKIE['‘cnt']+1;
+setcookie(‘cnt',$cnt);
+
+echo "Welcome Back Accessing $cnt times";
+
+}
+
+else
+
+{
+
+echo "Welcome...";
+setcookie(‘cnt','1');
+}
+
+?>
+2. Write a PHP script to change the preferences of your web page like
+font style, font size, font color, background color using cookie. Display
+selected setting on next web page and actual implementation (with new
+settings) on third page.
+
+Soln:-
+
+(E1Ap2.html)
+
+<html>
+
+<body>
+
+<form action=E1AQ2.php>
+
+Font style:
+
+<select name="fstyle">
+
+<option value=b>Bold</option>
+<option value=i>Itallic</option>
+<option value=u>Underlind</option>
+</select>
+
+<br>
+
+Font size:
+
+<select name="fsize">
+
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+</select>
+
+<br>
+Font color:
+
+<select name="fc">
+
+<option value=red>Red</option>
+<option value=blue>blue</option>
+<option value=green>green</option>
+<option value=black>black</option>
+<option value=yellow>yellow</option>
+</select>
+
+<br>
+
+Background color:
+
+<select name="bc">
+
+<option value=red>Red</option>
+<option value=blue>blue</option>
+<option value=green>green</option>
+<option value=black>black</option>
+<option value=yellow>yellow</option>
+</select>
+
+<br>
+
+<input type=submit value=process>
+</form>
+
+</body>
+
+</html>
+
+(E1Ap2.php)
+<?php
+
+$fstyle=$_GET['fstyle'];
+$fsize=$_GET|'fsize'];
+$fc=$_GET['fc'];
+
+$bc=$_GET['bc'];
+setcookie('fs’,"$fstyle");
+setcookie('fz',"$fsize");
+setcookie(‘fc',"$fc");
+setcookie(‘bc',"$bc");
+
+?>
+
+<form action=thirdpageE1AQ2.php>
+Enter some text<input type=text name=st><br>
+<input type=reset value=clear>
+<input type=submit value=Sub mit>
+
+</form>
+
+(E1Ap3.php)
+
+//page third
+
+<?php
+
+$st=$_GET['st'];
+
+$fsize=$_COOKIE['fz'];
+$fstyle=$_COOKIE['fs"];
+$fc=$_COOKIE['fc'];
+
+$bc=$_COOKIE['bc'];
+
+echo "<br>implementation of ...****<br>";
+echo "<body bgcolor=$bc>";
+
+echo "<font size=$fsize color=$fc><$fstyle>$st</<$fstyle></font>";
+
+echo "</body>";
+?>
+
+SET-B
+
+Q1) Write a PHP script to accept username and password. If in the first three
+chances, username and password entered is correct then display second form with
+“Welcome message” otherwise display error message. [Use Session]
+
+Soln:_
+
+<form action=login.php method=post>
+user:<input type=text name=un><br>
+Password:<input type=password name=pwd><br>
+<input type=reset value=clear>
+
+<input type=submit value=Next>
+
+</form>
+
+(Login.php)
+
+<?php
+
+session_start();
+
+$_SESSION['t']=time();
+
+?>
+
+<form action=login2.php>
+
+RNo:<input type=text name=rno><br>
+Name:<input type=text name=name><br>
+<input type=submit>
+
+</form>
+
+(Login2.php)
+
+<?php
+
+session_start();
+
+$ SESSION[‘nt']=$_SESSION['t']+20;
+if(time()>$_SESSION[‘nt'])
+
+echo "Session expired...";
+
+else
+
+{
+
+echo "<br>R.No:".$_GET['rno’];
+echo "<br>Name:".$_GET[‘name’];
+
+}
+
+2>
+2. Write a PHP script to accept Employee details (Eno, Ename, Address) on first page.
+On second page accept earning (Basic, DA, HRA). On third page print Employee
+information (Eno, Ename, Address, Basic, DA, HRA, Total) [ Use Session]
+
+Soln:-
+(E1BQ2P1.html)
+
+<form action=E1BQ2P2.php>
+
+Eno:<input type=text name=eno><br>
+Ename:<input type=text name=eno><br>
+Address:<input type=text name=eno><br>
+</form>
+
+(E1BQ2P2.php)
+
+<?php
+
+session_start();
+
+$ SESSION['eno']=$_GET['eno'];
+
+$ SESSION[‘ename']=$_GET['ename’];
+$_SESSION[‘add']=$_GET['‘add'];
+
+?>
+
+<form action=E1BQ2P3.php>
+Basic:<input type=text name=basic><br>
+DA:<input type=text name=da><br>
+HRA:<input type=text name=hra><br>
+<input type=reset value=clear>
+
+<input type=submit value=Next>
+</form>
+
+(E1BQ2P3.php)
+
+<?php
+
+session_start();
+
+$_SESSION['basic']=$_GET[ basic];
+$_SESSION[‘da']=$_GET['da’];
+$_SESSION[‘hra‘]=$_GET[‘hra’‘];
+$tsal=$_SESSION['basic']+$_SESSION[‘da']+$_SESSION[‘hra’];
+echo "<br>***Employee Details***<br>";
+
+echo "<br>Employee No.:".$_SESSION['‘eno'];
+
+echo "<br>Employee Name:".$_SESSION[‘ename’];
+echo "<br>Employee Address:".$_SESSION['add'];
+echo "<br>Employee Basic:".$_SESSION['basic’];
+echo "<br>Employee DA:".$_SESSION[‘da’];
+
+echo "<br>Employee HRA:".$ SESSION[‘hra’];
+echo "<br>Total Salary:".$tsal;
+
+session_unset ();
+
+session_destroy(};
+echo "<br>Employee No.:".$_SESSION['‘eno'];
+
+echo "<br>Employee Name:".$_SESSION[‘ename’];
+echo "<br>Employee Address:".$_SESSION['add'];
+echo "<br>Employee Basic:".$_SESSION['basic’];
+echo "<br>Employee DA:".$_SESSION[‘da’];
+
+echo "<br>Employee HRA:".$ SESSION[‘hra’];
+echo "<br>Total Salary:".$tsal;
+
+?>
+
+Assignment No 2
+
+SET-A
+
+1) Write a script to create XML file named “Item.xml”
+<Item>
+
+<ItemName> ............. </ItemName>
+<ItemPYrice> ....ccceeeeee </ItemPrice>
+<Quantity> ..........e ee </Quantity>
+</Item>
+
+Store the details of 5 Items of different Types
+Soln:-
+
+<items>
+
+<Item>
+
+<ItemName> Notebook </ItemName>
+<ItemPrice> 200</ItemPrice>
+<Quantity> 2 </Quantity>
+
+</Item>
+
+<Item>
+
+<ItemName> Pencil </ItemName>
+<ItemPrice> 5</ItemPrice>
+<Quantity> 50 </Quantity>
+</Item>
+
+<Item>
+
+<ItemName> Eraser </ItemName>
+<ItemPrice> 5 </ItemPrice>
+<Quantity> 10 </Quantity>
+</Item>
+
+<Item>
+<ItemName> TestBook </ItemName>
+<ItemPrice> 500</ItemPrice>
+<Quantity> 02 </Quantity>
+</Item>
+
+<Item>
+
+<ItemName> Pen </ItemName>
+<ItemPrice> 10 </ItemPrice>
+<Quantity> 20 </Quantity>
+</Item>
+
+</items>
+
+2) Link “ Item. Xml” file to the CSS style sheet and get well formatted output as given
+below
+
+i) ItemName:
+
+Color : red;
+
+Font-family : copperplate Gothic Light;
+Font-size : 16pt;
+
+Font :bold;
+
+ii) ItemPrice and Quantity
+
+color:yellow;
+font-family:Arial;
+font-size:12 pt;
+font:bold;
+
+Soln:-
+
+<?xml-stylesheet type="text/css" href="item.css"?>
+<items>
+
+<Item>
+
+<ItemName> Notebook </ItemName>
+
+<ItemPrice> 200</ItemPrice>
+
+<Quantity> 2 </Quantity>
+
+</Item>
+
+<Item>
+
+<ItemName> Pencil </ItemName>
+<ItemPrice> 5</ItemPrice>
+<Quantity> 50 </Quantity>
+</Item>
+
+<Item>
+<ItemName> Eraser </ItemName>
+<ItemPrice> 5 </ItemPrice>
+<Quantity> 10 </Quantity>
+</Item>
+
+<Item>
+
+<ItemName> TestBook </ItemName>
+<ItemPrice> 500</ItemPrice>
+<Quantity> 02 </Quantity>
+
+</Item>
+
+<Item>
+
+<ItemName> Pen </ItemName>
+<ItemPrice> 10 </ItemPrice>
+<Quantity> 20 </Quantity>
+</Item>
+
+</items>
+(Style.css)
+
+ItemName{
+
+color:grey;
+
+font-family: copperplate Gothic Light;
+font-size: 16pt;
+
+font:bold;
+
+}
+
+ItemPrice,Quantity{
+color:blue;
+font-family: Arial;
+font-size:12pt;
+font:bold;
+
+}
+
+Q3-Write a PHP script to generate an XML file in the following format in PHP.
+<?xml version="1.0" encoding="UTF-8"?>
+<BookInfo>
+
+<book>
+
+<bookno>1</bookno>
+<bookname>JAVA</bookname>
+<authorname> Balguru Swami</authorname>
+<price>250</price>
+
+<year>2006</year>
+
+</book>
+
+<book>
+
+<bookno>2</bookno>
+<bookname>C</bookname>
+
+<authorname> Denis Ritchie</authorname>
+<price>500</price>
+
+<year>1971</year>
+
+</book>
+
+</BookInfo>
+
+Soln:-
+
+<BookInfo>
+
+<book>
+
+<bookno>1</bookno>
+<bookname>JAVA</bookname>
+<authorname>Balguru Swami</authorname>
+<price>250</price>
+
+<year>2006</year>
+
+</book>
+
+<book>
+
+<bookno>2</bookno>
+<bookname>C</bookname>
+<authorname> Denis Ritchie</authorname>
+<price>500</price>
+
+<year>1971</year>
+
+</book>
+
+<book>
+
+<bookno>3</bookno>
+<bookname>C++</bookname>
+<authorname> Denis Ritchie</authorname>
+<price>700</price>
+
+<year>1982</year>
+
+</book>
+
+</BookInfo>
+
+<?php
+header("content-type: text/xm1");
+$b=array(1, "JAVA", " Balguru Swami ", 250,2006, 2, "C"," Denis Ritchie ",500,1971, 3,
+“C++”,"Denis Ritchie ", 700, 1982);
+echo "<bookInfo>";
+
+for($i=0;$i<sizeof($b);$i=$it+ 5)
+
+{
+echo "<book>";
+echo "<bookno>".$b[$i]."</bookno>";
+echo "<bookname>".$b[$i+1]."</bookname>";
+echo "<authorname>".$b[$i+2]."</authorname>";
+echo "<price>".$b[$i+3]."</price>";
+echo"<year>”.$b[$i+4].”</year>;
+echo "</book>";
+echo "</bookInfo>";
+
+?>
+
+SET-B
+
+1. Write PHP script to read above created “book.xml” file into simpleXML object.
+Display attributes and elements .(Hint L simple_xml_load_fileQ function )
+
+Soln:-
+
+<BookInfo>
+
+<book>
+
+<bookno>1</bookno>
+<bookname>JAVA</bookname>
+<authorname>Balguru Swami</authorname>
+<price>250</price>
+
+<year>2006</year>
+
+</book>
+
+<book>
+
+<bookno>2</bookno>
+<bookname>C</bookname>
+<authorname> Denis Ritchie</authorname>
+<price>500</price>
+
+<year>1971</year>
+
+</book>
+
+<book>
+
+<bookno>3</bookno>
+<bookname>C++</bookname>
+<authorname> Denis Ritchie</authorname>
+<price>700</price>
+
+<year>1982</year>
+
+</book>
+
+</BookInfo>
+
+(simplexml01.php)
+
+<?php
+
+$xml=simplexm|]_load_file(‘book.xml') or die("Unable to open");
+g$aname="Denis Ritchie";
+
+echo "<table border=1 width=70%>";
+
+echo "<tr><th>book no</th><th>book
+name</th><th>authorname</th><th>price</th><th>Year</th></tr>";
+foreach($xml->children() as $t)
+if($t->authorname==$aname)
+
+{
+
+echo "<tr align=center>";
+
+echo "<td>".$t->bookno."</td>";
+echo "<td>".$t->bookname."</td>";
+echo "<td>".$t->authorname."</td>";
+echo "<td>".$t->price."</td>";
+
+echo "<td>".$t->year."</td>";
+
+echo "</tr>";
+
+}
+
+echo "</table>";
+?>
+
+2. Write a PHP script to read “Movie.xml” file and print all MovieTitle and ActorName of file
+using DOMDocument Parser. “Movie.xml” file should contain following information with at
+least 5 records with values. Movielnfo
+
+MovieNo, MovieTitle, ActorName , ReleaseYear
+
+Set C
+
+1. Create a XML file which gives details of movies available in “Movie CD Store “ from
+following categories
+
+a) Classical
+b) Horror
+c) Action
+
+Elements in each category are in the following format
+
+<Category>
+
+<MovieTitle> .........:00 </ MovieTitle >
+<ActorName> .......: see </ACtorName>
+<ReleaseYear> .......0: </ReleaseYear>
+</Category>
+
+Save the file with name “movies.xml”
+
+Soln:-
+
+<movies>
+
+<Category type="Classical">
+
+<MovieTitle> Jodha Akbar </MovieTitle >
+<ActorName> Hritikh Roshan</ActorName>
+<ReleaseYear> 2007 </ReleaseYear>
+</Category>
+
+<Category type="Horror">
+<MovieTitle> Bhool bhulaiya </MovieTitle >
+<ActorName> Akshay Kumar</ActorName>
+<ReleaseYear> 2022 </ReleaseYear>
+</Category>
+
+<Category type="Action">
+<MovieTitle> KGF-2 </MovieTitle >
+<ActorName> Yash</ActorName>
+<ReleaseYear> 2022 </ReleaseYear>
+</Category>
+
+</movies>
+
+Assignment No 3
+
+SET-A
+
+1) Write a javascript to display message “Exams are near, have you started preparing for?’ using
+alert, prompt and confirm boxes. Accept proper input from user and display messages
+accordingly.
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Title of the document</title>
+
+</head>
+
+<body>
+
+<script>
+
+let ans;
+
+alert("Exams are near, have you started preparing for?");
+
+ans=prompt("Exams are near, have you started preparing for?");
+iffans=="yes')
+
+document.write(‘good job..');
+
+else
+
+document.write(‘you should study...');
+
+confirm(‘is it true’)
+
+</script>
+</script>
+</body>
+</htm|>
+
+2)Add or append in paragraph text and also in the numbered(ordered) list in a given HTML
+document using jQuery selectors. [Hint : Use Append( ) method]
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> </script>
+<script>
+$(document).ready(function() {
+$("#btn1").click(function() {
+$("p").append(" <b> Appended text</b>.");
+Ds
+$("#btn2”).click(function( {
+$("ol").append("<li> Appended item</li>");
+Ds
+Ys
+</script>
+</head>
+<body>
+
+<p> This is a paragraph. </p>
+<p> This is another paragraph. </p>
+
+<ol>
+<li>List item 1</li>
+<li> List item 2</li>
+<li> List item 3</li>
+</ol>
+
+<button id="btn1"> Append text</button>
+<button id="btn2">Append list item</button>
+
+</body>
+</html>
+
+SET-B
+
+1) Write a javascript function to validate username and password for a membership form.
+
+<html>
+
+<body>
+
+<script>
+
+function validateform( {
+
+var name=document.myform.name. value;
+var password=document.myform.password. value;
+
+if (name==null || name==""){
+alert("Name can't be blank”);
+return false;
+jelse if(password.length<6) {
+alert("Password must be at least 6 characters long.");
+return false;
+
+}
+}
+
+</script>
+
+<body>
+
+<form name="myform"” method="post”
+action="http://www.javatpoint.com/javascriptpages/valid.jsp” onsubmit="return validateform()”
+>
+
+Name: <input type="text” name="name"> <br/>
+
+Password: <input type="password” name="password"> <br/>
+<input type="submit” value="register”>
+
+</form>
+
+</body>
+
+</html>
+
+2) To insert text before and after an image using jQuery. [Hint : Use before( ) and after( )]
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<title> Inserting HTML Contents Before or After the Elements in jQuery</title>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+// Add content after a div container on document ready
+$("#container”).after("<p>&mdash; The End &mdash;</p>");
+
+// Add content before a div container on document ready
+$("#container”).before("<p>&mdash; Demo Text &mdash;</p>");
+
+// Add content after heading on button click
+$("button.insert-after”).click(function() {
+$("img").after(‘bye ');
+
+)
+
+// Add content before heading on button click
+$("button.insert-before”).click(function() {
+$("img").before(‘hello ');
+Ds
+Ys
+</script>
+<style>
+hl{
+display: inline-block; /* To place marker image and heading in one line */
+}
+body{
+text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>Hello World</h1>
+<hr>
+<button type="button” class="insert-before">Insert Before</button>
+<button type="button” class="insert-after">Insert After</button>
+<hr>
+<div id="container">
+<img src="https://images.pexels.com/photos/4227282/pexels-photo-
+4227282.jpeg ?cs=srgbé&dl=pexels-lisa-fotios-4227282.jpg&fm=jpg” alt="">
+</div>
+</body>
+</html>
+
+SET-C
+
+2) Remove div section elements after clicking on button using jQuery. [Hint : Use #id selector]
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax. googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script>
+$(document).ready(function() {
+$("button”).click(function() {
+$("#d").remove();
+Ds
+Ys
+</script>
+</head>
+<body>
+
+<div>
+This is some text in the div.
+<p id="d">This is a element in the div.</p>
+
+</div>
+
+<div id="d">
+
+This is some text in the div.
+
+<p> This is a paragraph in the div.</p>
+
+<p> This is another paragraph in the div.</p>
+</div>
+
+<br>
+
+<button>Remove div element</button>
+
+</body>
+</html>
+
+Assignment No 4
+SET-A
+
+1) Write AJAX program to read contact.dat file and print the contents of the file in a tabular
+format when the user clicks on print button. Contact.dat file should contain srno, name, residence
+number, mobile number, Address. [Enter at least 3 record in contact.dat file]
+
+Soln:
+
+contact.dat file
+
+1 Nirbhay 020111111 9028282629 Mumbai
+
+2 Naiem 02022222 9970970127 pune
+
+3 Arbaj 020333333 9604968618 Delhi
+
+Contact1.html Html file
+<html>
+<head>
+<script type="text/javascript" >
+
+function print()
+
+{
+var ob=false;
+ob=new XM LHttpRequest();
+ob.open{"GET","contact.php?");//emailid="+eid);
+ob.send{);
+ob.onreadystatechange=function()
+{
+if(ob.readyState==4 && ob.status==200)
+{
+document.getElementByld("i").innerHTML=ob.responseText;
+}
+}
+}
+</script>
+</head>
+<body>
+<center>
+
+<h3>Display the contents of a contact.dat file </h3>
+<br><input type="button" value=Print onclick="print()" >
+<span id="i"></span>
+
+</center>
+
+</body>
+
+</html>
+
+Contact.php php file
+<?php
+Sfp = fopen('contact.dat'’,'r’);
+echo "<table border=1>";
+
+echo "<tr><th>Sr. No.</th><th>Name</th><th>Residence No.</th><th>Mob.
+no.</th><th>Address</th></tr>";
+
+while(Srow = fscanf(Sfp,"%s %s %s %s %s"))
+
+{
+
+echo "<tr>";
+foreach(Srow as Sr)
+
+{
+
+echo "<td>Sr</td>";
+
+}
+
+echo "</tr>";
+
+echo "</table>";
+fclose($fp);
+
+?>
+2) Write AJAX program where the user is requested to write his or her name in a text box, and the server
+keeps sending back responses while the user is typing. If the user name is not entered then the message
+displayed will be, “Stranger, please tell me your name!”. If the name is Rohit, Virat, Dhoni, Ashwin or
+Harbhajan , the server responds with “Hello, master!”. If the name is anything else, the message will be
+
+“| don’t know you!”.
+
+SAE AG Hee AC A He He ee AE AS HH ee AE AS HH ee AE AC He ee AE HS HH eI I AC I A ee AE AC ee ee I ee EC I EAC I eC ee EC ee
+
+Assignment No 5
+SET-A
+
+1) Create a CSS file to apply the following styling for an HTML document. Background color: blue, H1 {
+Color : red, Font-family : Verdana, Font-size : 8 }P { Color: green, Font-family : Monospace, Font-size :10
+
+Soln:
+
+set-A-Q1.html file name
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible” content="TE=edge” />
+<link rel="stylesheet” href="set-A-Q2.css” />
+<title> Assignment 5 | Set A | Q1</title>
+</head>
+<body bgcolor="blue">
+<h1>Program to apply CSS form external file.</h1>
+<p>Text to show css file styles</p>
+</body>
+</html>
+
+set-A-Q2.css file name
+
+hl {
+color: red;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+font-size: 8;
+
+}
+Pi
+color: green;
+
+font-family: monospace;
+font-size: 10;
+
+}
+
+SET-C
+
+1) Create a form to accept personal details of customer (name, age, address). Once the
+personal information is accepted, on the next page accept order details such as (product
+name, quantity). Display the personal details and order details on the third page. (Use
+cookies)
+
+set-C-Q1-1.php file name
+<?php
+
+$name = $_GET['name’];
+Sage = $_GET['age’);
+$address = $_GETT['address'];
+
+moon
+
+setcookie("name”, "$name");
+setcookie("age”, "$age");
+setcookie("address”, "$address");
+
+>
+
+<form action="set-C-Q1-2.php">
+<div>
+<label for="prodname”>Product Name:</label>
+<input type="text” name="prodname” id="prodname” />
+</div>
+<div>
+<label for="prodquantity">Product Quantity: </label>
+<input type="text” name="prodquantity” id="prodquantity” />
+</div>
+<div>
+<label for="address">Customer Address: </label>
+<input type="text” name="address” id="address” />
+</div>
+<input type="submit” value="submit” />
+<input type="reset” value="clear” />
+</form>
+
+set-C-Q1-2.php file name
+
+<?php
+$pname = $_GET|'prodname');
+$quantity = $_GET['prodquantity’];
+
+moon
+
+setcookie("prodname”, "$pname”);
+
+ont
+
+setcookie("prodquantity”, "$quantity");
+
+echo "<br>---- : Customer Details : ----<br />";
+
+echo "<br />Customer Name: " . $ COOKIE["name”];
+echo "<br />Customer Age : " . $_COOKIE["age"];
+
+echo "<br />Customer Address : " . $_COOKIE["address"];
+echo "<br />Product Name :" . $_ COOKIE["prodname"];
+echo "<br />Product Name :" . $ COOKIE["prodquantity"];
+?>
+
+set-C-Q1.html file name
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible” content="TE=edge” />
+<meta name="viewport” content="width=device-width, initial-scale=1.0" />
+<title>C52.html</title>
+</head>
+<body>
+<form action="set-C-Q1-1.php">
+<div>
+<label for="name”">Customer Name: </label>
+<input type="text” name="name” id="name” />
+</div>
+<div>
+<label for="age">Customer Age: </label>
+<input type="text” name="age” id="age” />
+</div>
+<div>
+<label for="address">Customer Address: </label>
+<input type="text” name="address” id="address” />
+</div>
+<input type="submit” value="next” />
+<input type="reset” value="clear” />
+</form>
+</body>
+</html>
+2) Write a PHP script to accept Employee details ( Eno, Ename, address) on first page. On
+second page accept earning (Basic, Da, HRA). On third page print Employee information(
+ENO,Ename, Address, BASIC, DA, HRA, TOTAL) (Use Session)
+
+set-C-Q2-1.php file name
+
+<?php
+session_start();
+$ SESSION["eno”] = $_GET["eno"];
+$_ SESSION["ename”] = $_GET["ename”];
+$_ SESSION["eaddress"|] = $ _GET["eaddress"];
+?>
+<h1>Enter the earning details</h1>
+<form action="set-C-Q2-2.php” method="get">
+<div>
+<label for="basic">Basic</label>
+<input type="text” name="basic” name="besic” />
+</div>
+<div>
+<label for="da">DA</label>
+<input type="text” name="da" id="da" />
+</div>
+<div>
+<label for="hra">HRA</label>
+<input type="text” name="hra” id="hra" />
+</div>
+<br />
+<input type="reset” value="Clear” />
+<br />
+<input type="submit” value="Next” />
+</form>
+
+set-C-Q2-2.php file name
+
+<?php
+
+session_start();
+
+$ SESSION["basic”] = $_GET["basic"];
+
+$ SESSION["da"] = $_GET["da"];
+
+$ SESSION["hra"] = $_GET["hra"];
+
+$total = $_SESSION["basic”] + $_SESSION["da”] + $_SESSION["hra"];
+echo "<h1>-: Employee Details Are :-</h1>";
+
+echo "<br> Employee Number : " . $ SESSION["eno"];
+echo "<br> Employee Name : ". $ SESSION["ename");
+echo "<br> Employee Address : " . $_SESSION["eadsress"];
+echo "<br> Employee Basic : " . $_SESSION["basic"];
+echo "<br> Employee DA : " . $ SESSION["da"];
+echo "<br> Employee HRA : " . $_SESSION["hra"];
+echo "<br> Employee Total Earning : " . $total;
+
+?>
+
+set-C-Q2.html file name
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible” content="TE=edge” />
+<meta name="viewport” content="width=device-width, initial-scale=1.0" />
+<title> Assignment 5 | Set - C | Q2</title>
+</head>
+<body>
+<form action="set-C-Q2-1.php” method="get">
+<div>
+<label for="eno">Emplo yee Number</label>
+<input type="text” name="eno” name="eno" />
+</div>
+<div>
+<label for="ename">Employee Name</label>
+<input type="text” name="ename” id="ename” />
+</div>
+<div>
+<label for="eaddress">Employee Adress</label>
+<input type="text” name="eaddress” id="eaddress” />
+</div>
+<br />
+<input type="reset” value="Clear” />
+<br />
+<input type="submit” value="Next” />
+</form>
+</body>
+</html>
+

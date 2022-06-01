@@ -1,0 +1,1464 @@
+Name:- Umer Parvez Ansari
+Class:- TY.B.SC(Comp.Sci)
+RollNo:-248
+
+Assignment No-1: - Cookies and Session
+
+Set-A:-
+
+Q1) Write a PHP script to keep track of number of times the web page has been
+access. [Use session and cookies]
+
+<html>
+
+<head>
+
+<title> number of web pages has been visited.</title>
+</head>
+
+<body bgcolor=pink>
+
+<font size=6 color=red>
+
+<?php
+
+session_start();
+if(isset(S_SESSION['count']))
+S_SESSION['count']=S_ SESSION['count']+1;
+else
+
+S_SESSION['count']=1;
+echo"<h3> This page is accessed</h3>".S_ SESSION['count']."Times"; ?>
+
+Qro #4 f
+
+This page is accessed
+
+6Time
+
+Q2) Write a PHP script to change the preferences of your web page like font
+style, font size, font color, background color using cookie. Display selected
+setting on next web page and actual implementation (with new settings) on
+third page.
+
+HTML CODE
+
+<html>
+
+<body>
+
+<form method=post action=SETAQ2.php>
+Enter Text<input Type=text name=t1>
+<br>
+
+Enter style<input Type=text name=t2>
+<br>
+
+Enter bgcolor<input Type=text name=t3>
+<br>
+
+Enter size<input Type=text name=t4>
+
+<br>
+Enter font color<input Type=text name=t5>
+<br>
+
+<input type=submit value=submit>
+</form>
+
+</body>
+
+</html>
+
+PHP CODE
+
+<?php
+
+Stext=$_COOKIE['text'];
+Ss=$_COOKIE['style'];
+Sb=$_COOKIE['bgcolor'];
+$sz=$_COOKIE['size'];
+Sc=$_COOKIE['color'];
+
+echo"<html>
+
+<body bgcolor=$b> <font size=$sz color=$c> <$s> Stext </Ss> </font></body></html>";
+
+?>
+
+¢ 172.168.0.254 isk Qe 86 + #/ =
+
+ 
+
+Set-B:-
+
+Q1) Write a PHP script to accept username and password. If in the first three
+chances, username and password entered is correct then display second form
+with “Welcome message” otherwise display error message. [Use Session]
+HTML CODE
+
+<html>
+
+<head>
+
+<title> Ass1 set B Q1</title>
+
+</head>
+
+<body bgcolor=pink>
+
+<form action=SetB_Q1.php method=get>
+
+<font size=6 color=blue>
+
+Enter Username<input type=text name=n placeholder="username"><br>
+Enter Password<input type=password name=p placeholder="password"><br>
+<input tyoe=submit value=Login>
+
+</font>
+
+</body>
+
+</html>
+
+PHP CODE
+
+<body bgcolor=cyan>
+<font size=6 color=blue>
+<?php
+
+session_start();
+Snm=S_GET['n'];
+
+Sps=$_GET['p'];
+
+if(M(isset(S_ SESSION ['cnt'])})
+{
+S$ SESSION['cnt']=1;
+if(Snm==$ps)
+
+echo"correct<br>Login Successfull<br>Welcome!!!";
+else
+echoS SESSION['cnt']."Chances used Invalid login";
+}
+
+else
+
+{
+
+S$ SESSION['cnt'J=$_ SESSION['cnt']+1;
+if($_ SESSION['cnt']<=3)
+
+{
+
+if(Snm==$ps)
+
+echo"correct<br>Login Successfull<br>Welcome!!!";
+else
+echoS SESSION['cnt']."Chances used Invalid login";
+}
+else
+echo"<br>Attempt Finished";
+
+}P>
+
+“| €& ) >| @172.168.0,254:91
+
+Enter Username nim
+Enter Password
+
+Login
+
+Q xa 4+ ff
+
+Q2) Write a PHP script to accept Employee details (Eno, Ename, Address) on first
+page. On second page accept earning (Basic, DA, HRA). On third page print
+Employee information (Eno, Ename, Address, Basic, DA, HRA, Total) [ Use
+Session]
+
+HTML
+
+<html>
+
+<body>
+
+<form method=post action=SETAQ2.php>
+Enter text<input type=text name=t1>
+<br>
+
+Enter style<input type=text name=t2>
+<br>
+
+Enter bgcolor<input type=text name=t3>
+<br>
+
+Enter size<input type=text name=t4>
+<br>
+
+Enter color<input type=text name=tS>
+<br>
+
+<input type=submit value=submit>
+</form>
+
+</body>
+
+</html>
+
+php-1
+
+<body bgcolor=pink>
+
+<font size=8 color=blue>
+
+<?php
+setcookie('text',S_POST['t1']);
+setcookie('style',S_POST['t2']);
+setcookie('bcolor',S_POST['t3']);
+
+setcookie('size’,S_POST['t4']);
+setcookie('color',S_POST['t5']);
+
+echo"<html><form method=post action=SETAQ2_2.php>
+Your Settings:
+
+text=".$_COOKIE['text'];
+echo"<br>Style=".$_COOKIE['style'];
+echo"<br>Bgcolor=".$_COOKIE['bcolor'];
+echo"<br>Size=".$_COOKIE['size'];
+
+echo"<br>font color=".$_COOKIE['color'];
+
+echo"<input type=submit value=implement>";
+
+?>
+
+PHP-2
+
+<?php
+
+Stext=$_COOKIE['text'];
+
+$s=$_COOKIE['style'];
+
+$b=$_COOKIE|'bcolor'];
+
+$sz=$_COOKIE['size’];
+
+Sc=$_COOKIE['color'];
+
+echo"<html>
+
+<body bgcolor=$b> <font face=$s size=$sz color=Sc>$text</font></body></html>";
+
+?>
+
+file:///run/media/tybcs 25/1664-4088/Assignment1/SET B/@2/SetB_@2.htmL C Qoryr & + fr —
+
+ 
+Enter Earnings of Employee:
+
+Basic
+DA
+HRA
+
+6 | |Ei~ Qa 7 Ss + Ff
+
+Employee Details
+
+Eno: 1
+Name : abcs
+Address : hfdj
+
+Basic :123
+DA : 244
+HRA : 2353
+
+Assignment No-2: - XML documents and DOM
+Set-A:-
+
+Q1) Write a script to create XML file named “Item.xml”
+<ltem>
+<ItemMName> .......ccce </ItemName>
+
+<ItemPrice> oo. </|ltemPrice>
+<Quantity> oe </Quantity>
+</ltem>
+
+Store the details of 5 Items of different Types
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemDetails>
+
+<Item ID="1">
+<ItemName>Mouse</ItemName=>
+<ItemPrice> 150</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="2">
+<ItemName>Monitor</ItemName>
+<ItemPrice>2500</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="3">
+<ItemName>Keyboard</ItemName>
+<ItemPrice>550</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="4">
+<ItemName>ScreenGuard</ItemName>
+<ItemPrice> 1150</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="5">
+<ItemName>KeyGuard</ItemName>
+
+<ltemPrice>850</ItemPrice>
+<Quantity>15</Quantity>
+</Item>
+
+</ItemDetails>
+
+€ ) @172.168.0.254:90/-tybcs16/ltem.xml ¥ G] [By Google Qria + #
+
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+
+ 
+
+— <ItemDetails>
+— <Item ID="1">
+<ItemName> Mouse</ItemName>
+<ItemPrice>150</ItemPrice>
+<Quantity> 15</Quantity>
+</Item>
+— <Item ID="2">
+<ItemName> Monitor</ItemName>
+<ItemPrice>2500</ItemPrice>
+<Quantity> 15</Quantity>
+</Item>
+— <Item ID="3">
+<ItemName> Keyboard</ItemName>
+<ItemPrice>550</ItemPrice>
+<Quantity> 15</Quantity>
+</Item>
+— <Item ID="4">
+<ItemName> ScreenGuard</ItemName>
+<ItemPrice> 1150</ItemPrice>
+<Quantity> 15</Quantity>
+</Item>
+— <Item ID="5">
+<ItemName>KeyGuard</ItemName>
+<ItemPrice>850</ItemPrice>
+<Quantity> 15</Quantity>
+</Item>
+</ItemDetails>
+
+Q2) Link “Item. Xml” file to the CSS style sheet and get well formatted output as
+given below
+
+i) ItemName:
+
+Color: red;
+
+Font-family: copperplate Gothic Light;
+Font-size: 16pt;
+
+Font: bold;
+
+ii) ItemPrice and Quantity
+color: yellow;
+font-family: Arial;
+font-size:12 pt.;
+
+font: bold;
+
+ItemName{
+color:red;
+font-family:copperplate Gothic Light;
+font-size: 16pt:
+font:bold;
+
+}
+
+ItemPrice{
+color:yellow;
+font-family:Arail:
+font-size: 12pt:
+font:bold;
+
+}
+
+Quantity{
+color:yellow;
+font-family:Arial:
+font-size: 12pt:
+font:bold;
+
+}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="Item.css"?>
+<ItemDetails>
+
+<Item ID="1">
+
+<ltemName>Mouse</ItemName>
+<ItemPrice> 150</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="2">
+<ItemName>Monitor</ItemName>
+<ItemPrice>2500</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="3">
+<ItemName>Keyboard</ItemName>
+<ItemPrice>550</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="4">
+<ItemName>ScreenGuard</ItemName>
+<ItemPrice> 1150</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+<Item ID="5">
+<ItemName>KeyGuard</ItemName>
+<ItemPrice>850</ItemPrice>
+<Quantity>15</Quantity>
+
+</Item>
+
+</ItemDetails>
+
+¢€ 172.168.0.254
+
+Mouse ©). Monitor): | Keyboard=: | ScreenGuard +i. > KeyGuard 95) >
+Q3) Write a PHP script to generate an XML file in the following format in PHP.
+<?xml version="1.0" encoding="UTF-8"?>
+
+<html>
+
+<head>
+
+<title>Book Store</title>
+
+</head>
+
+<body>
+
+<form action=SETA_Q3.php method=get>
+
+<pre>
+
+Enter 1st Book Number : <input type=text name=bno1>
+Enter 1st Book Name : <input type=text name=bname1>
+Enter 1st Author Name : <input type=text name=aname1>
+Enter 1st Price : <input type=text name=price1>
+
+Enter 1st Year : <input type=text name=year1>
+
+Enter 2nd Book Number : <input type=text name=bno2>
+Enter 2nd Book Name : <input type=text name=bname2>
+Enter 2nd Author Name : <input type=text name=aname2>
+Enter 2nd Price : <input type=text name=price2>
+
+Enter 2nd Year : <input type=text name=year2>
+
+<input type="submit" value="show'>
+
+</pre>
+
+</form>
+
+</body>
+
+</html>
+
+<?php
+$bno_1=$_GET['bno1'];
+$bname_1=$_GET['bname1'y;
+$aname_1=$ _GET['aname1'y;
+$price_1=$_GETT['price1'J;
+$year_1=$_GET[year1'];
+
+$bno_2=$_GET['bno2']:
+$bname_2=$ GET['bname2'];
+$aname_2=$ GET['aname2'y;
+$price_2=$ _GETT['price2');
+$year_2=$ GET[year2'];
+
+$xml = "<?xml version='1.0' encoding='|SO-8859-1'?>":
+$xml = $xml."<BookInfo>":
+$xml = $xml."<book>";
+
+$xml = $xml."<bookno>":
+$xml = $xml."$bno_ 1";
+
+$xml = $xml."</bookno>":
+$xml = $xml."<bookname>":
+$xml = $xml."$bname_1";
+$xml = $xml."</bookname>",
+$xml = $xml."<authername>";
+$xml = $xml."$aname_1";
+$xml = $xml."</authername>";
+$xml = $xml."<price>":
+
+$xml = $xml."$price_1";
+
+$xml = $xml."</price>",
+
+$xml = $xml."<year>";
+
+$xml = $xml."$year_1";
+
+$xml = $xml."</year>";
+
+$xml = $xml."</book>";
+$xml = $xml."<book>";
+
+$xml = $xml."<bookno>":
+$xml = $xml."$bno_2":
+
+$xml = $xml."</bookno>":
+$xml = $xml."<bookname>":
+$xml = $xml."$bname_2":
+$xml = $xml."</bookname>",
+$xml = $xml."<authername>";
+$xml = $xml."$aname_2":
+$xml = $xml."</authername>";
+$xml = $xml."<price>":
+
+$xml = $xmlI."$price_2";
+
+$xml = $xml."</price>",
+
+$xml = $xml."<year>";
+
+$xml = $xml."$year_2",
+
+$xml = $xml."</year>";
+
+$xml = $xml."</book>";
+
+$xml = $xml."</BooklInfo>";
+
+if($fp = fopen("book.xml","wt"))
+
+{
+if($wt = fwrite($fp,$xml))
+
+{
+
+header("location:book.xml");
+
+}
+
+else "File Not Created...";
+
+else
+echo "File Not Open...":
+
+?>
+
+<?php
+$xml=simplexml_load_file('book.xml"):
+
+foreach($xml->book as $b)
+
+{
+echo "Book Number = $b->bookno <br>":
+echo "Book Name = $b->bookname <br>";
+echo "Author Name = $b->aname <br>";
+echo "Price = $b->price <br>";
+echo "Year = $b->year<br>";
+
+}
+
+?>
+
+<?xml version='1.0' encoding='I!SO-8859-1'?
+><BookInfo><book><bookno>1</bookno><bookname>JAVA</
+bookname><authername>Balguru
+Swami</authername><price>250</price><year>2006</year></book><book><
+bookno>2</bookno><bookname>C</bookname><authername>Denis
+Ritchie</authername><price></price><year>197 1</year></book></BooklInfo>
+
+ft | ©) @172.168.0.254 ve| $ OF =
+
+This XML file does not appear to have any style information associated with it. The document tree is
+shown below.
+
+ 
+
+—<BookInfo>
+—<book>
+<bookno>1</bookno>
+<bookname>JAVA</bookname>
+<authername>Balguru Swami</authername>
+<price>250</price>
+<year>2006</year>
+</book>
+—<book>
+<bookno>2</bookno>
+<bookname>C</bookname>
+<authername> Denis Ritchie</authername>
+<price/>
+<year>1971</year>
+</book>
+</BookInfo>
+Set-B:-
+
+Q1) Write PHP script to read above created “book.xml’” file into simplexXML
+object. Display attributes and elements. (Hint L simple_xml_loac_file () function)
+
+<?php
+Sxml=simplexml_load_file("book.xml");
+foreach(Sxml->book as $b)
+
+{
+
+echo "Book Number=Sb->bookno <br>";
+echo "Book Name=Sb->bookname <br>";
+echo "Author Name=Sb->aname <br>";
+echo "Price=Sb->price <br>";
+
+echo "Year=Sb->year <br>";
+
+}
+
+?>
+
+<?xml version='1.0'
+encoding='"ISO-8859-1'?><Booklnfo><boak><bookno>1</boaokno><bookname>JAVA</
+bookname><authername>Balguru
+Swami</authername><price>250</price><year>2006</year></boak><book><bookno
+>2</bookno><bookname>C</bookname><authername>Denis
+Ritchie</authername><price>500</price><year>1971</year></book></Bookinfo>
+
+ft (©) @172.168.0.254 vel +
+
+Q2)
+
+Book Number = 1
+
+Book Name = JAVA
+
+Author Name = Balguru Swami
+Price = 250
+
+Year = 2006
+
+Book Number = 2
+
+Book Name = C
+
+Author Name = Denis Ritchie
+Price = 500
+
+Year = 1971
+
+|”
+
+Write a PHP script to read “Movie.xml” file and print all MovieTitle and
+ActorName of file using DOMDocument Parser. “Movie.xml” file should contain
+following information with at least 5 records with values. Movielnfo MovieNo,
+MovieTitle, ActorName, ReleaseYear.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Movielnfo>
+<Movie>
+<MovieNo> 1 </MovieNo>
+<MovieTitle> XYZ </MovieTitle>
+<ActorName> Salman </ActorName>
+<ReleaseYear> 2005 </Release Year>
+
+</Movie>
+
+<Movie>
+
+<MovieNo> 2 </MovieNo>
+<MovieTitle> ABCD </MovieTitle>
+<ActorName> Ranveer </ActorName>
+<ReleaseYear> 2015 </ReleaseYear>
+
+</Movie>
+<Movie>
+
+<MovieNo> 3 </MovieNo>
+<MovieTitle> PQR </MovieTitle>
+<ActorName> Rani </ActorName>
+<ReleaseYear> 2003 </Release Year>
+
+</Movie>
+
+<Movie>
+
+<MovieNo> 4 </MovieNo>
+<MovieTitle> WXY </MovieTitle>
+<ActorName> Vivek </ActorName>
+<ReleaseYear> 2010 </ReleaseYear>
+
+</Movie>
+
+<Movie>
+
+<MovieNo> 5 </MovieNo>
+<MovieTitle> LMNO </MovieTitle>
+<ActorName> Abhishek </ActorName>
+<ReleaseYear> 2008 </Release Year>
+</Movie>
+
+</Movielnfo>
+
+<?php
+//$dom=new DomDocument("1.0","ISO-8859- 15");
+$dom=new DOMDocument();
+$dom->load("BQ2.xml"):
+
+print $dom->saveXML()."<br>";
+$title=$dom->getElementsBy TagName("MovieTitle");
+
+$aname=$dom->getElementsBy TagName("ActorName"):
+
+echo "<h2>Titles Of Movie</h2>";
+foreach($title as $b)
+
+{
+
+echo"<br>$b->textContent<br><br><br>",
+
+echo "<h2>Actor Names</h2>";
+
+foreach($name as $a)
+
+{
+
+echo"<br>$a->textContent<br><br><br>",
+
+ 
+
+?>
+
+OutPut:-
+
+€ @ 172.168.0.254:90/-tybcs16/movie.xml Ve By Google we
+—<Movielnfo>
+
+— <Movie>
+
+<MovieNo> 1</MovieNo>
+<MovieTitle> XYZ</MovieTitle>
+<ActorName>Salman</ActorName>
+<ReleaseYear> 2005</Release Year>
+</Movie>
+— <Movie>
+<MovieNo> 2</MovieNo>
+<MovieTitle> ABCD</MovieTitle>
+<ActorName>Ranveer</ActorName>
+<ReleaseYear> 2015</ReleaseYear>
+</Movie>
+— <Movie>
+<MovieNo> 3</MovieNo>
+<MovieTitle>POR</MovieTitle>
+<ActorName> Rani</ActorName>
+<ReleaseYear> 2003</ReleaseYear>
+</Movie>
+— <Movie>
+<MovieNo>4</MovieNo>
+<MovieTitle> WxXY¥</MovieTitle>
+<ActorName>Vivek</ActorName>
+<ReleaseYear> 2010</Release Year>
+</Movie>
+— <Movie>
+<MovieNo>5</MovieNo>
+<MovieTitle> LMNO</MovieTitle>
+<ActorName>Abhishek</ActorName>
+<ReleaseYear> 2008</ReleaseYear>
+</Movie>
+</Movielnfo>
+ASSIGNMENT NO. : 3:- JAVASCRIPT and jquer
+Set:A
+
+1) Write a javascript to display message ‘Exams are near, have you started
+preparing for?’ using alert, prompt and confirm boxes. Accept proper input
+from user and display messages accordingly.
+
+<html>
+
+<body bgcolor=cyan>
+
+<font color=blue size=6>
+
+<p id=demo> </p>
+
+<script>
+
+alert("Exams are near,have you started preparing for?");
+
+var person=prompt("please enter your name","Harry Potter");
+if(person!=null)
+
+{
+
+document.getElementByld("demo").innerHTML="Hello"+person+",<br>Exam are near,have you
+started preparingfor?";
+
+}
+
+window.confirm("Exam are near.have you started preparing for?");
+</script>
+
+</font>
+
+</body>
+
+</html>
+© ) @172.168.0.254-90/-tybcs25/ass-3/@1. html ¥ x||BBy Google Qre 4 f
+
+ 
+
+Exams are near,have you started preparing for?
+
+ 
+
+© | @172.168.0.254:90/-tybcs25/ass-3/1 ntmi ~ =| (BK « gle arrester =
+
+please enter your name
+tybcs
+™ Prevent this page fromm creating additional dialogs
+
+ 
+
+© | @172.168.0.254:90/-tybcs25/ass-3/O1 html ~ «| [Ey Googie are -
+
+Exem are near.have you started preparing for?
+
+Prevent this page fromm creating additional dialogs
+
+ 
+
+a
+
+( € ) @172.168.0.254:90/~tybcs25/ass-3/Q1.html ~ @| |EBy Google Q) x
+
+ 
+
+ 
+
+ 
+
+ 
+2) Add or append in paragraph text and also in the numbered(ordered) list in a
+given HTML document using jQuery selectors. [Hint : Use Append( } method]
+
+html>
+<head>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+§(document).ready(function(){
+S("#btn1").click(function(){
+S("p").append("<b>Appended text</b>.");
+});
+S("#btn2").click(function(){
+S("ol").append("<li>Appended items</li>");
+});
+});
+</script>
+</head>
+<body>
+<p>This is a paragraph.</p>
+
+<p>This is another paragraph.</p>
+
+<ol>
+<li>List item 1</li>
+<li>List item 2</li>
+<li>List item 3</li>
+</ol>
+
+<button id="btn1">Append text</button>
+<button id="btn2">Append List items</button>
+</body>
+</html>
+
+<€ 172.168.0.254
+This is a paragraph.Appended text.Appended text.
+This is another paragraph.Appended text.Appended text.
+
+ 
+
+1. List item 1
+
+2. List item 2
+
+3. List item 3
+
+4. Ap ne i items
+
+5. Appended items
+
+Append text Append List items
+
+SET B:
+
+1) Write a javascript function to validate username and password for a
+membership form.
+
+HTML-1
+
+<html>
+
+<body bgcolor=black>
+<font color=red size=6>
+Registerd Successfully
+</font>
+
+</body>
+
+</html>
+
+HTML-2
+<script>
+function validateform(){
+
+var name=document.myform.name.value;
+var password=document.myform.password.value;
+
+if(name==null | | name==""){
+
+alert("Name can't be blank");
+
+return false;
+
+}
+
+else if(password.length<6){
+
+alert("password must be at least 6 characters long");
+
+return false;
+
+}
+
+}
+</script>
+<body>
+
+<form method="post" action="P1.html" name="myform" onsubmit="return
+validateform(}">
+
+Name:<input type="text" name="name"><br/>
+Password:<input type="password" name="password"><br/>
+<input type="submit" value="register">
+
+</form>
+
+</body>
+<€< @ 172.168.0.254 ~ ¢| |i~
+
+password must be at least 6 characters long
+
+ 
+
+e a @ 177.168.0.254:90/~tybcs25/ass-3/P1.html
+
+ 
+
+2) To insert text before and after an image using jQuery. [Hint : Use before( )
+and after( )]
+
+<html>
+
+<head>
+
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+
+§(document).ready(function(){
+S("#btn1").click(function(){
+S("img").before("<b>Appended Before</b>"); });
+S("#btn2").click(function(){
+S("img").after("<i>Appended After</i>"); });
+
+});
+</script>
+
+<body>
+
+<img scr="1.png" height=80 width=90></img>
+<br>Text appears Before and after this !!!!
+<button id="btn1">Insert before</button>
+
+<button id="btn2">Insert after</button>
+
+</body>
+
+</html>
+€ @172.168.0.254 t -¢ |B
+Appended BeforeAppended Before Appended AfterAppended After
+
+Text appears Before and after this !!!! | Insert before — Insert after
+ASSIGNMENT NO. 4:- AJAX
+Set A
+
+1. Write AJAX program to read contact.dat file and print the contents of the file
+in a tabular format when the user clicks on print button. Contact.dat file should
+contain srno, name, residence number, mobile number, Address. [Enter at least
+3 record in contact.dat file]
+
+Contact.dat file
+
+1 Aasha 0204371002 8098652315 Pune
+2 Meena 0206510072 9092563685 Pune
+3 Shital 020925689 8736659845 Bombay
+
+<html>
+<head>
+<style>
+
+span
+
+{
+
+font-size: 25px;
+}
+
+table
+
+{
+
+color: blueviolet;
+
+}
+
+</style>
+
+<script type="text/javascript">
+function print(}
+
+{
+
+var ob=false;
+ob=new XMLHttpRequest();
+ob.open("Get","ASS4_ SETAQ1.php?");
+ob.send();
+ob.onreadystatechange=function()
+
+{
+
+if(ob.readyState==4 && ob.status==200)
+
+document.getElementByld("i").innerHTML=ob.responsetext;
+
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<center>
+
+<h3>Display the contents of a Contact.dat file</h3>
+<br><input type="button" value=Print onclick="print()">
+
+<span id="i"></span>
+</center>
+</body>
+
+</html>
+
+<?php
+Sfp=fopen('Contact.dat','r');
+echo "<table border=1>";
+
+echo "<tr><th>Sr.No.</th><th>Name</th><th>Residence No.</th><th>Mob
+no.</th><th>Address</th></tr>";
+
+while(Srow= fscanf(Sfp,"%s %s %s %s %s"))
+{
+
+echo'<tr>";
+foreach(Srow as Sr)
+echo"<td>Sr</td>";
+echo"</tr>";
+
+}
+
+echo"</table>"
+
+fclose(Sfp);
+?>
+€ 172.168.0.254 “ @| |BB¥ Goog Q * 8
+Display the contents of a Contact.dat file
+Print
+2 ©) 172.168.0254 C | |v IL QaQr ao 4+ f
+
+Display the contents of a Contact.dat file
+
+Print
+
+ 
+
+ 
+
+ 
+
+|sr.No.[Name|Residence No.| Mob no. [Address
+[a [Aasha 0204371002 _|[s098652315|[Pune
+
+2 [Meenalozossioo72 |[soo925esess|[Pune
+
+[3 [Shital lo20s2s680 [2736659845|[Bombay
+
+ 
+
+ 
+
+ 
+
+Write AJAX program where the user is requested to write his or her name ina
+text box, and the server keeps sending back responses while the user is typing.
+If the user name is not entered then the message displayed will be, “Stranger,
+please tell me your name!”. If the name is Rohit, Virat, Dhoni, Ashwin or
+Harbhajan , the server responds with “Hello, master !”. If the name is anything
+else, the message will be “ | don’t know you!”.
+
+<html>
+
+<body>
+
+<script type="text/javascript">
+function display()
+
+{
+
+var x=new XMLHttpRequest();
+
+var n=document.getElementByld('n').value;
+x.open("GET","ASS4_ SETAQ2.php?n="+n,true);
+x.send();
+x.onreadystatechange=function()
+
+{
+if(x.readyState==4 && x.status==200)
+
+{
+document.getElementByld("show").innerHTML=x.responseText;
+}
+
+}
+
+}
+
+</script>
+
+Enter Your Name:<input type="text" name='n' id='n' onfocus="display()"
+onkeyup="display()"><br>
+
+<h1 id="show"></h1>
+</body>
+
+</html>
+
+<font color=green size=8>
+
+<?php
+
+Snm=S_GET['n'];
+Snm_arr=array("Rohit","Virat","Dhoni","Ashwin","Harbhajan");
+if(Snam==NULL)
+
+echo "Stranger, please tell me your name!";
+
+foreach(Snm_arr as Sn)
+
+{
+
+if(stremp($n,Snm)==0)
+
+{
+
+echo"Hello Master Snm!":
+exit();
+
+}
+
+}
+
+echo"Snm,| don't know you!";
+
+?>
+
+€ 172.168.0.254: 91 t T t ~ @| |B ce
+
+Enter Your Mame: Rohit
+
+Hello Master Rohit!
+
+Set:-B
+
+1. Create TEACHER table as follows TEACHER(tno, tname, qualification, salary).
+Write Ajax program to select a teachers name and print the selected teachers
+details.
+
+tybcsdb47=> create table teacher(tno int primary key,tname varchar(20),qual
+varchar(20},sal int);
+
+NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index "teacher_pkey" for
+table "teacher"
+
+CREATE TABLE
+
+tybcsdb47=> select * from teacher;
+
+tno| tname | qual | sal
+
+----- a a
+1 | Minal Roy | Msc(Maths)NET | 35000
+2 | Reena Shinde | Msc(CS)NET SET | 25000
+3 | Seema Sharma | Msc(CS) | 25000
+4 | Nilima Ghone | Msc(CS) | 22000
+
+(4 rows)
+
+<html>
+
+<body>
+
+<script type="text/javascript">
+
+function display()
+
+{
+
+var x=new XMLHttpRequest();
+
+var n=document.getElementByld('n').value;
+x.open("GET","ASS4_SETBQ1.php?n="+n,true);
+x.send();
+
+x.onreadystatechange=function()
+
+{
+if(x.readyState==4 && x.status==200)
+
+{
+document.getElementByld("show").innerHTML=x.responseText;
+}
+
+}
+
+}
+
+</script>
+
+Enter Your Name:<input type="text" name='n' id='n'><br>
+<button onclick="display()">Print</button>
+
+<h1 id="show"></h1>
+
+</body>
+
+</html>
+<?php
+Stname=S_GET['n'];
+
+Scon=pg_connect("host=172.168.0.254 port=543?2 doname=tybcsdb47
+user=tybcs47")or die("Could not connect");
+
+Sqry="select * from teacher where tname='Stname’; ";
+Srs=pg_query(Scon,Sqry)or die("unable to execute query");
+if(Srs!=null)
+
+{
+
+echo"<table border=1>";
+
+echo"<tr><td>Teacher Number</td><td>Teacher
+Name</td><td>Qualification</td><td>Salary</td></tr>";
+
+while(Srow=pg_fetch_row(Srs})
+{
+
+echo"<tr>";
+echo"<td>".Srow[0]."</td>";
+echo"<td>".Srow[1]."</td>";
+echo"<td>".Srow[2]."</td>";
+echo"<td>".Srow[3]."</td>";
+echo"</tr>";
+
+}
+
+echo"</table>":
+
+}
+
+else
+
+echo"No records found";
+pg_close(Scon);
+
+?>
+2. Write Ajax program to print Order details by selecting a Customer’s name.
+Create table Customer and Order as follows with 1: M cardinality CUSTOMER
+(cno, cname, city) and ORDER(ono, odate, shipping address)
+
+tybcsdb47=> create table customer(cno int primary key,cname varchar(20),city
+varchar(20)});
+
+NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index "customer_pkey" for
+table "customer"
+
+CREATE TABLE
+
+tybcsdb47=> create table orderl(ono int primary key,odate date,SA varchar(20),cno
+int references customer(cno));
+
+NOTICE: CREATE TABLE / PRIMARY KEY will create implicit index "order1_pkey" for
+table “order1"
+
+CREATE TABLE
+
+tybcsdb47=> select * from customer;
+cno | cname | city
+
+— pepe
+
+101 | Vinita | Pune
+
+102 | Megha | Bombay
+
+103 | Radha | Nashik
+
+104 | Rani | Pune
+
+(4 rows)
+
+tybcsdb47=> select * from order1;
+ono | odate | sa |cno
+
+----- panna nanan epee
+1 | 2021-12-30 | Pune | 101
+2 | 2022-01-15 | Pune | 101
+3 | 2022-01-15 | Bombay | 102
+4 | 2022-01-22 | Nashik | 103
+
+(4 rows)
+
+<html>
+
+<body>
+
+<script type="text/javascript">
+
+function display()
+
+{
+
+var x=new XMLHttpRequest();
+
+var n=document.getElementByld('n').value;
+x.open("GET","ASS4_SETBQ2.php?n="+n,true);
+x.send();
+
+x.onreadystatechange=function()
+
+{
+if(x.readyState==4 && x.status==200)
+
+{
+document.getElementByld("show").innerHTML=x.responseText;
+}
+
+}
+
+}
+
+</script>
+
+Enter Your Name:<input type="text" name='n' id='n'><br>
+
+<button onclick="display()">Print</button>
+<h1 id="show"></h1>
+</body>
+
+</html>
+
+<?php
+Scname=S_GET['n'];
+
+Scon=pg_connect("host=172.168.0.254 port=543?2 doname=tybcsdb47
+user=tybcs47")or die("Could not connect");
+
+Sqry="select * from order1 where cno in(select cno from customer where
+cname='Scname’);";
+
+Srs=pg_query(Scon,Sqry)or die("unable to execute query");
+if(Srs!=null)
+
+{
+
+echo"<table border=1>";
+
+echo"<tr><td>Order Number</td><td>Order Date</td><td>Shipping
+Address</td><td>Customer Number</td></tr>";
+
+while(Srow=pg_fetch_row(Srs))
+{
+
+echo"<tr>";
+echo"<td>".Srow[0]."</td>";
+echo"<td>".Srow[1]."</td>";
+echo"<td>".Srow[2]."</td>";
+echo"<td>".Srow[3]."</td>";
+echo"</tr>";
+
+}
+
+echo"</table>":
+
+}
+
+else
+
+echo"No records found";
+pg_close(Scon);
+
+?>
+
+ 
+
+© ) @172.168.0.254:90/- tybcs16/ASS4_SETBO@2.html ~ @| (Bay coogle
+
+Enter Your MName:| Vinita
+
+ 
+
+| Print |
+
+ 
+
+[order Number |O rder Date [Shipping Address|[C ustomer Number
+[1 j2021-12-30|[Pune [101
+[2 j2022-01-15|Pune [uo1
+
